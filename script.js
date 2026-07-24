@@ -85,9 +85,25 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(drawStars);
 
-const continueButton = document.getElementById("continueButton");
-if (continueButton) {
-  continueButton.addEventListener("click", () => {
-    continueButton.textContent = "Siguiente escena ✦";
-  });
+
+const story1 = document.getElementById("story1");
+const story2 = document.getElementById("story2");
+const toStory2 = document.getElementById("toStory2");
+const goldFlash = document.getElementById("goldFlash");
+
+function cinematicSwitch(from, to) {
+  if (goldFlash) {
+    goldFlash.classList.remove("play");
+    void goldFlash.offsetWidth;
+    goldFlash.classList.add("play");
+  }
+  setTimeout(() => {
+    from?.classList.remove("active");
+    to?.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 480);
+}
+
+if (toStory2) {
+  toStory2.addEventListener("click", () => cinematicSwitch(story1, story2));
 }

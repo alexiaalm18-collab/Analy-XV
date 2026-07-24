@@ -782,3 +782,76 @@ body.experience-open {
   0%,100% { opacity: .38; }
   50% { opacity: .7; }
 }
+
+
+/* ===== Experiencia 02: escenas encadenadas ===== */
+.story-panel {
+  position: absolute;
+  inset: 22px 12px 78px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.985);
+  transition: opacity 1.05s ease, transform 1.2s ease, visibility 1.05s;
+}
+.story-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.story-image {
+  width: min(470px, 94vw);
+  max-height: calc(100svh - 145px);
+  margin: 0;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255,224,143,.48);
+  box-shadow: 0 24px 70px rgba(0,0,0,.58), 0 0 28px rgba(224,175,71,.17);
+}
+.story-image img {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 145px);
+  object-fit: contain;
+  background: #020b1c;
+  transform: scale(1.003);
+}
+.story-panel.active .story-image img {
+  animation: storyDrift 11s ease-out forwards;
+}
+.story-panel .continue-button {
+  opacity: 1;
+  margin-top: 14px;
+}
+.scene-back {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: .72 !important;
+}
+.gold-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,247,208,.88), rgba(234,184,72,.42) 18%, rgba(8,20,48,.12) 48%, transparent 70%);
+}
+.gold-flash.play {
+  animation: goldTransition 1.25s ease both;
+}
+@keyframes goldTransition {
+  0% { opacity: 0; transform: scale(.8); }
+  45% { opacity: .95; transform: scale(1.08); }
+  100% { opacity: 0; transform: scale(1.3); }
+}
+@keyframes storyDrift {
+  from { transform: scale(1.003); }
+  to { transform: scale(1.045); }
+}

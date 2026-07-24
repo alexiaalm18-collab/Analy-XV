@@ -79,14 +79,23 @@
   <section class="experience" id="experiencia" aria-hidden="true">
     <div class="cinema-scene">
       <div class="scene-stars" aria-hidden="true"></div>
-      <p class="scene-intro">Y así comenzó su historia...</p>
-      <figure class="baby-frame">
-        <img src="analy-bebe-escena1.jpg" alt="Recuerdo de Analy recién nacida">
-      </figure>
-      <button class="continue-button" id="continueButton" type="button">
-        Continuar <span aria-hidden="true">✦</span>
-      </button>
-      <button class="back-button scene-back" id="backButton" type="button">Volver</button>
+
+      <div class="story-panel active" id="story1">
+        <figure class="story-image">
+          <img src="analy-bebe-escena1.jpg" alt="Recuerdo de Analy recién nacida">
+        </figure>
+        <button class="continue-button" id="toStory2" type="button">Continuar <span aria-hidden="true">✦</span></button>
+      </div>
+
+      <div class="story-panel" id="story2">
+        <figure class="story-image">
+          <img src="analy-escena2.jpg" alt="Los años pasan, los sueños crecen y la historia de Analy se transforma">
+        </figure>
+        <button class="continue-button" id="toStory3" type="button">Continuar <span aria-hidden="true">✦</span></button>
+      </div>
+
+      <button class="back-button scene-back" id="backButton" type="button">Volver a la portada</button>
+      <div class="gold-flash" id="goldFlash" aria-hidden="true"></div>
     </div>
   </section>
 
