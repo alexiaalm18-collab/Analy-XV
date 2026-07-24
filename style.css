@@ -1403,3 +1403,104 @@ body.experience-open {
   gap: 17px;
   padding-top: 42px;
 }
+
+
+/* ===== Escena 6: confirmación de asistencia ===== */
+.rsvp-cinema {
+  position: relative;
+  overflow: hidden;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(42,91,164,.34), transparent 31%),
+    radial-gradient(circle at 50% 55%, rgba(221,169,62,.10), transparent 43%);
+}
+.rsvp-glow {
+  position: absolute;
+  width: min(78vw, 540px);
+  height: min(78vw, 540px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244,211,119,.12), transparent 67%);
+  animation: formalPulse 4s ease-in-out infinite;
+}
+.rsvp-content {
+  position: relative;
+  z-index: 3;
+  width: min(600px, 91vw);
+  text-align: center;
+}
+.rsvp-content > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.rsvp-scene:target .rsvp-content > * {
+  animation: formalIn .95s ease forwards;
+}
+.rsvp-scene:target .rsvp-content > *:nth-child(1) { animation-delay: .15s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(2) { animation-delay: .45s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(3) { animation-delay: .75s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(4) { animation-delay: 1s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(5) { animation-delay: 1.25s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(6) { animation-delay: 1.45s; }
+.rsvp-scene:target .rsvp-content > *:nth-child(7) { animation-delay: 1.7s; }
+.rsvp-kicker {
+  font-family: "Cinzel", serif;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  color: #e2bd67;
+}
+.rsvp-content h2 {
+  margin: 18px auto 14px;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: clamp(2.7rem, 11vw, 4.8rem);
+  line-height: 1.06;
+  color: #fff0c6;
+  text-shadow: 0 0 20px rgba(226,177,69,.22);
+}
+.rsvp-divider {
+  color: #d4a43d;
+  letter-spacing: .1em;
+}
+.rsvp-content p {
+  max-width: 500px;
+  margin: 27px auto 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(1rem, 4.5vw, 1.25rem);
+  line-height: 1.55;
+  color: rgba(255,248,229,.9);
+}
+.rsvp-title {
+  margin-top: 34px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.3rem, 5.7vw, 1.8rem);
+  letter-spacing: .08em;
+  color: #f0d17b;
+}
+.rsvp-content .rsvp-small {
+  margin-top: 12px;
+  font-size: .95rem;
+  color: rgba(255,255,255,.7);
+}
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 27px;
+  padding: 17px 25px;
+  border: 1px solid #f6dd91;
+  border-radius: 999px;
+  background: linear-gradient(100deg,#bd8424,#f3d46f 48%,#c58b27);
+  color: #17110a;
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+  font-size: clamp(.76rem, 3.4vw, .95rem);
+  letter-spacing: .07em;
+  box-shadow: 0 0 22px rgba(224,174,65,.24);
+}
+.rsvp-back {
+  position: relative;
+  z-index: 4;
+  margin-top: 34px;
+}
