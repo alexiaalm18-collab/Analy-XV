@@ -62,7 +62,7 @@
         Gracias por acompañarnos en uno de ellos.”
       </blockquote>
 
-      <a class="start-button reveal reveal-7" href="#escena1">
+      <a class="start-button reveal reveal-7" href="#escena1" onclick="startAnalyMusic()">
         <span class="button-shine" aria-hidden="true"></span>
         <span>Comenzar la experiencia</span>
         <b aria-hidden="true">✦</b>
@@ -236,6 +236,44 @@
     <source src="musica-analy.mp3" type="audio/mpeg">
   </audio>
   <button id="musicToggle" class="music-toggle" type="button" aria-label="Silenciar o activar música" title="Música">♪</button>
+
+
+  <script>
+    function startAnalyMusic() {
+      const music = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+      if (!music) return;
+
+      music.volume = 0.55;
+
+      const begin = () => {
+        try { music.currentTime = 20; } catch (e) {}
+        const p = music.play();
+        if (p && typeof p.then === 'function') {
+          p.then(() => {
+            if (toggle) {
+              toggle.classList.add('visible');
+              toggle.textContent = '♫';
+              toggle.classList.remove('muted');
+            }
+          }).catch(() => {
+            if (toggle) {
+              toggle.classList.add('visible');
+              toggle.textContent = '♪';
+              toggle.classList.add('muted');
+            }
+          });
+        }
+      };
+
+      if (music.readyState >= 1) {
+        begin();
+      } else {
+        music.addEventListener('loadedmetadata', begin, { once: true });
+        music.load();
+      }
+    }
+  </script>
 
 </body>
 </html>

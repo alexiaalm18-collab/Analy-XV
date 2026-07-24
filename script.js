@@ -76,31 +76,15 @@ if (canvas) {
 (function () {
   const music = document.getElementById("bgMusic");
   const toggle = document.getElementById("musicToggle");
-  const startLink = document.querySelector('a.start-button[href="#escena1"]');
   const finalHome = document.getElementById("finalHome");
   if (!music || !toggle) return;
 
   const START_AT = 20;
-  music.volume = 0.32;
+  music.volume = 0.55;
 
   function setToggleState() {
     toggle.textContent = music.paused ? "♪" : "♫";
     toggle.classList.toggle("muted", music.paused);
-  }
-
-  function playFromExperienceStart() {
-    try { music.currentTime = START_AT; } catch (e) {}
-    music.play().then(() => {
-      toggle.classList.add("visible");
-      setToggleState();
-    }).catch(() => {
-      toggle.classList.add("visible");
-      setToggleState();
-    });
-  }
-
-  if (startLink) {
-    startLink.addEventListener("click", playFromExperienceStart);
   }
 
   toggle.addEventListener("click", function () {
