@@ -84,3 +84,10 @@ window.addEventListener("resize", resizeCanvas);
 
 resizeCanvas();
 requestAnimationFrame(drawStars);
+
+const continueButton = document.getElementById("continueButton");
+if (continueButton) {
+  continueButton.addEventListener("click", () => {
+    continueButton.textContent = "Siguiente escena ✦";
+  });
+}
