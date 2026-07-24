@@ -1645,3 +1645,37 @@ body.experience-open {
   color: #e2b84f;
   text-shadow: 0 0 18px rgba(226,184,79,.6);
 }
+
+
+/* ===== Versión final: control de música ===== */
+.music-toggle {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  right: 16px;
+  z-index: 999;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(244,215,132,.78);
+  border-radius: 50%;
+  background: rgba(3,17,42,.78);
+  color: #f1d27a;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  box-shadow: 0 0 18px rgba(220,171,65,.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, transform .25s ease, background .25s ease;
+}
+.music-toggle.visible {
+  opacity: .9;
+  visibility: visible;
+}
+.music-toggle:active { transform: scale(.93); }
+.music-toggle.muted {
+  opacity: .55;
+}
