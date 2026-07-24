@@ -47,3 +47,26 @@ if (canvas) {
   resizeCanvas();
   requestAnimationFrame(drawStars);
 }
+
+
+/* Cuenta regresiva. Hora provisional: medianoche del 12 de septiembre de 2026.
+   Se puede cambiar fácilmente cuando se confirme el horario del evento. */
+(function () {
+  const target = new Date("2026-09-12T00:00:00-07:00").getTime();
+  const d = document.getElementById("days");
+  const h = document.getElementById("hours");
+  const m = document.getElementById("minutes");
+  const s = document.getElementById("seconds");
+  if (!d || !h || !m || !s) return;
+
+  function updateCountdown() {
+    let distance = target - Date.now();
+    if (distance < 0) distance = 0;
+    d.textContent = Math.floor(distance / 86400000);
+    h.textContent = String(Math.floor((distance % 86400000) / 3600000)).padStart(2, "0");
+    m.textContent = String(Math.floor((distance % 3600000) / 60000)).padStart(2, "0");
+    s.textContent = String(Math.floor((distance % 60000) / 1000)).padStart(2, "0");
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
