@@ -62,11 +62,11 @@
         Gracias por acompañarnos en uno de ellos.”
       </blockquote>
 
-      <button class="start-button reveal reveal-7" id="startButton" type="button">
+      <a class="start-button reveal reveal-7" href="#escena1">
         <span class="button-shine" aria-hidden="true"></span>
         <span>Comenzar la experiencia</span>
         <b aria-hidden="true">✦</b>
-      </button>
+      </a>
 
       <p class="hint reveal reveal-7">Toca para descubrir la invitación</p>
     </section>
@@ -76,26 +76,26 @@
     </div>
   </main>
 
-  <section class="experience" id="experiencia" aria-hidden="true">
+  <section class="scene-overlay" id="escena1" aria-label="Primera escena">
     <div class="cinema-scene">
       <div class="scene-stars" aria-hidden="true"></div>
+      <figure class="story-image">
+        <img src="analy-bebe-escena1.jpg" alt="Recuerdo de Analy recién nacida">
+      </figure>
+      <a class="continue-button" href="#escena2">Continuar <span aria-hidden="true">✦</span></a>
+      <a class="back-button scene-back" href="#inicio">Volver a la portada</a>
+    </div>
+  </section>
 
-      <div class="story-panel active" id="story1">
-        <figure class="story-image">
-          <img src="analy-bebe-escena1.jpg" alt="Recuerdo de Analy recién nacida">
-        </figure>
-        <button class="continue-button" id="toStory2" type="button">Continuar <span aria-hidden="true">✦</span></button>
-      </div>
-
-      <div class="story-panel" id="story2">
-        <figure class="story-image">
-          <img src="analy-escena2.jpg" alt="Los años pasan, los sueños crecen y la historia de Analy se transforma">
-        </figure>
-        <button class="continue-button" id="toStory3" type="button">Continuar <span aria-hidden="true">✦</span></button>
-      </div>
-
-      <button class="back-button scene-back" id="backButton" type="button">Volver a la portada</button>
-      <div class="gold-flash" id="goldFlash" aria-hidden="true"></div>
+  <section class="scene-overlay" id="escena2" aria-label="Segunda escena">
+    <div class="cinema-scene">
+      <div class="scene-stars" aria-hidden="true"></div>
+      <div class="gold-flash-static" aria-hidden="true"></div>
+      <figure class="story-image">
+        <img src="analy-escena2.jpg" alt="Los años pasan, los sueños crecen y la historia de Analy se transforma">
+      </figure>
+      <a class="continue-button" href="#escena2">Continuar <span aria-hidden="true">✦</span></a>
+      <a class="back-button scene-back" href="#inicio">Volver a la portada</a>
     </div>
   </section>
 

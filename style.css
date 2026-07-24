@@ -866,3 +866,113 @@ body.experience-open {
   transform: scale(1.02);
   filter: blur(4px);
 }
+
+
+/* ===== Navegación robusta SIN JavaScript ===== */
+.start-button,
+.continue-button,
+.back-button {
+  text-decoration: none;
+}
+
+.scene-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(25, 70, 139, .42), transparent 31%),
+    linear-gradient(180deg, rgba(1,6,17,.995), rgba(2,12,32,.995) 55%, rgba(1,6,17,.995));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.01);
+  transition: opacity .65s ease, visibility .65s ease, transform .65s ease;
+}
+
+.scene-overlay:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.scene-overlay .cinema-scene {
+  min-height: 100svh;
+  width: min(680px, 100%);
+  padding: 24px 12px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene-overlay .story-image {
+  width: min(470px, 94vw);
+  max-height: calc(100svh - 130px);
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,224,143,.5);
+  box-shadow: 0 24px 70px rgba(0,0,0,.6), 0 0 30px rgba(224,175,71,.2);
+  animation: cssPhotoIn 1.1s ease both;
+}
+
+.scene-overlay .story-image img {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 130px);
+  object-fit: contain;
+  background: #020b1c;
+  animation: cssKenBurns 12s ease-out forwards;
+}
+
+.scene-overlay .continue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 13px 28px;
+  border: 1px solid rgba(255,235,177,.75);
+  border-radius: 999px;
+  color: #1b1104;
+  background: linear-gradient(135deg, #9a651a, #f1d47e 48%, #ad7420);
+  font-family: "Cinzel", serif;
+  letter-spacing: .08em;
+  box-shadow: 0 0 24px rgba(222,174,72,.22);
+  opacity: 1;
+}
+
+.scene-overlay .scene-back {
+  position: static;
+  transform: none;
+  margin-top: 10px;
+  opacity: .72 !important;
+}
+
+.gold-flash-static {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,247,208,.14), transparent 50%);
+  animation: gentleGold 2.2s ease-out both;
+}
+
+@keyframes cssPhotoIn {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cssKenBurns {
+  from { transform: scale(1.003); }
+  to { transform: scale(1.04); }
+}
+
+@keyframes gentleGold {
+  from { opacity: .8; }
+  to { opacity: 0; }
+}
