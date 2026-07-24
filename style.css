@@ -855,3 +855,14 @@ body.experience-open {
   from { transform: scale(1.003); }
   to { transform: scale(1.045); }
 }
+
+
+/* Corrección funcional: transición de portada */
+.hero {
+  transition: opacity .6s ease, transform .6s ease, filter .6s ease;
+}
+.hero.leaving {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: blur(4px);
+}

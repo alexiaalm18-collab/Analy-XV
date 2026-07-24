@@ -1,5 +1,5 @@
 const startButton = document.getElementById("startButton");
-const hero = document.getElementById("portada");
+const hero = document.getElementById("inicio");
 const experience = document.getElementById("experiencia");
 const backButton = document.getElementById("backButton");
 
