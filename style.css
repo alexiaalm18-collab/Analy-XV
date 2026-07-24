@@ -1078,3 +1078,16 @@ body.experience-open {
   0%, 100% { opacity: .25; transform: translateX(-12vw) rotate(-9deg); }
   50% { opacity: .9; transform: translateX(12vw) rotate(-9deg); }
 }
+
+
+/* Corrección: botón CONTINUAR visible en escena 3 */
+.chapter-scene:target .chapter-button {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 10;
+  margin-top: 38px !important;
+  transform: none;
+  animation: none !important;
+}
